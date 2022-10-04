@@ -5,26 +5,29 @@
     --Violet: hsl(257, 40%, 49%);
     --SoftMagenta: hsl(300, 69%, 71%);
     font-family: 'Open Sans', sans-serif;
+    
 }
 
-h1, h2, h3, h4, h5, h6{
+h1, h2, h3, h4, h5, h6, button{
     font-family: 'Poppins', sans-serif;
 }
 
 *{
-    box-sizing: content-box;
+    box-sizing: border-box;
+    color: white;
 }
 
 
 body{
     position: relative;
-    padding: 54px 70px;
+    padding: 54px 80px 40px 74px;
     margin: 0px;
     background-image: url(./images/bg-desktop.svg);
     background-color: var(--Violet);
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    gap: 22px;
 }
 
 header{
@@ -37,11 +40,129 @@ header>img{
 }
 
 main{
+    position: relative;
     display: flex;
+    margin-top: auto;
+    gap: 52px;
 }
+
+article{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    height: 100%;
+    padding: 11px 0px;
+    flex: 1;
+}
+
+.img-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* flex: 1; */
+}
+.img-container>img{
+    width: 100%;
+}
+
+h1{
+    font-size: 40px;
+    word-spacing: -2px;
+    margin-bottom: 0px;
+}
+p{
+    font-size: 18px;
+    line-height: 28px;
+    color: rgba(255, 255, 255, 0.753);
+}
+button{
+    background-color: white;
+    border: none;
+    border-radius: 100px;
+    color: var(--Violet);
+    font-weight: 500;
+    padding: 15px 64px;
+
+    box-shadow: 4px 5px 10px rgba(0, 0, 0, 0.425);
+    font-size: large;
+    margin-top: 4px;
+}
+
+button:hover{
+    background-color: var(--SoftMagenta);
+    color: white;
+    cursor: pointer;
+}
+
+
 
 footer{
     display: flex;
-    flex-direction: row-reverse;
+    flex-direction: row;
     align-items: center;
+    justify-content: end;
+    gap: 16px;
+}
+
+.icon-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid white;
+    border-radius: 100%;
+    height: 40px;
+    width: 40px;
+
+}
+
+.icon-container:hover{
+    cursor: pointer;
+    border-color: var(--SoftMagenta);
+}
+.icon-container:hover>* {
+    color: var(--SoftMagenta);
+}
+
+@media screen and (max-width: 750px) {
+    body{
+        padding: 54px 20px 20px 20px;
+        background-image: url(./images/bg-mobile.svg);
+        background-repeat: no-repeat;
+        
+    }
+    header>img{
+        width: 160px;
+    }
+    main{
+        flex-direction: column;
+    }
+    main>*{
+        flex: 1;
+    }
+    article{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        padding: 0px 0px;
+        flex: 1;
+        text-align: center;
+    }
+    h1{
+        font-size: 28px;
+    }
+    p{
+        font-size: 14px;
+    }
+    button{
+        font-size: 14px;
+        width: 80%;
+        padding: 10px 20px;
+        margin-top: 10px;
+    }
+    footer{
+        align-items: center;
+        justify-content: center;
+        margin-top: 20px;
+    }
 }
